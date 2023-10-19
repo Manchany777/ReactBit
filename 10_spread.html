@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = ['강아지', '고양이', '토끼', '펭귄']
+        const arr2 = arr1.concat()
+        const arr3 = [...arr1]
+
+        // 추가
+        const arr4 = arr1.concat('코끼리', '기린') // 원본 변경x
+        const arr5 = [...arr1, '코끼리', '기린']   // 원본 변경x
+        const arr6 = ['코끼리', ...arr1, '기린']   // 앞뒤중간 원하는 곳에 끼어들기 가능(concat은 이게 불가능)
+
+        console.log('arr1 = ' + arr1) // 원본 변경x
+        console.log('arr2 = ' + arr2) // 원본 변경x
+        console.log('arr3 = ' + arr3) // concat과 동일한 기능 (...을 더 많이 쓴다.)
+        console.log('arr4 = ' + arr4)
+        console.log('arr5 = ' + arr5)
+        console.log('arr6 = ' + arr6)
+        console.log('------------------------')
+
+        // 배열에서는 spread를 쓰면 추가가 되지만 ,객체에서는 덮어쓴다(수정 효과)
+        const dog1 = {   // JSON객체
+            name: '멍멍이',
+            age: 2
+        }
+
+        const dog2 = {...dog1, name:'진돗개', age:5}
+        console.log(dog2)
+    </script>
+</body>
+</html>
+
+<!--
+spread
+...(전개 연산자)    
+-->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data1 = [
+            {id: 1, name: '홍길동', age: 5},
+            {id: 2, name: '프로도', age: 10},
+            {id: 3, name: '프로도', age: 20},
+            {id: 4, name: '어피치', age: 30},
+            {id: 5, name: '죠르디', age: 15}
+        ]
+
+        console.log(data1)
+        console.log('----------------------------')
+
+        const data2 = [...data1] // data1 사본 복사 (배열기호면, (객체와 달리)수정되는 것이 아니라 복사되는 것이다.)
+        console.log(data2)
+        console.log('----------------------------')
+
+        // 추가 => id: 6, name: '브라운', age: 20
+        const data3 = [...data2, {id:6, name: '브라운', age: 20}]
+        console.log(data3)
+        console.log('----------------------------')
+
+      
+        // 문제 - id가 6번인 '브라운'을 '제이지'로 변경하고, 나이를 30에서 35로 변경
+        // 내가 푼 버전 (약간 꼼수 씀)
+        const data4 = {...data3['id'===6], id: 6, name : '제이지', age: 35}
+        console.log(data4)
+        const data7 = [...data2, data4]
+        console.log(data7)
+        console.log('----------------------------')
+
+        // 쌤의 정답 버전
+        const data5 = data3.map((item, index) => {
+            if(item.id === 6) {
+                return {...item, name : '제이지', age: 35} //객체는 수정
+            } else {
+                return item
+            }
+        })
+        console.log(data5)
+        console.log('----------------------------')
+        // if문은 복잡해서 안 쓴다.
+        const data6 = data3.map(item => item.id === 6 ? {...item, name: '제이지', age: 35} : item) // map에서 index 안쓸거면 빼도 된다. (덧붙여 중괄호 안썼으니 return 안 써도 된다.)
+        console.log(data6)
+    </script>
+</body>
+</html>

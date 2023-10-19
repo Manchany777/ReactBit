@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [10, 20, 30]
+
+        const data = [
+            {id: 1, name: '홍길동', age: 25},
+            {id: 2, name: '프로도', age: 20},
+            {id: 3, name: '라이언', age: 30}
+        ]
+
+        // React에서는 return이 없으면 값이 나오지 않는다. 반드시 써야 한다.
+        arr.map((item, index) => {
+            return(console.log(index, item))
+        }) // java의 forEach문과 동일
+        console.log('--------------')
+        // 처리되는 문장이 하나일 때는 {}, return 생략할수 있다.
+        // 하지만 React는 특이하게 중괄호({}) 생략시 'return'도 같이 생략해야 한다.
+        arr.map((item, index) => (console.log(index, item)))
+        console.log('--------------')
+
+        data.map((item, index) => {
+            return (console.log(item.id, item.name, item.age)) // 배열이니까 이렇게 꺼내와야
+        })
+        console.log('--------------')
+        data.map((item, index) => console.log(item.id, item.name, item.age))
+
+        // 편한 방법을 사용해라
+    </script>
+</body>
+</html>
+
+<!-- 
+map (반복문)
+
+[형식]
+배열.map((요소, 인덱스) => {
+   return 요소
+});
+ -->

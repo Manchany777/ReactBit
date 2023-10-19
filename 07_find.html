@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [10, 20, 30, 20, 50, 60]
+
+        const result1 = arr.find(item => item > 30)
+        console.log(result1)
+
+        const result2 = arr.find(item => item === 20)
+        console.log(result2) // 몇 번째 20인지 어떻게 아느냐? 
+        
+        //result3처럼 index값을 보면 된다.
+        const result3 = arr.findIndex(item => item === 20)
+        console.log(result3) // index 1번 출력
+        console.log('----------------')
+
+        const data1 = [
+            {id: 1, name: '홍길동', age: 25},
+            {id: 2, name: '프로도', age: 20},
+            {id: 3, name: '어피치', age: 30}
+        ]
+
+        // id가 1인 값을 찾기
+        const data2 = data1.find(item => item.id === 1)
+        console.log(data2)
+
+        // name가 라이언인 값을 찾기
+        const data3 = data1.find(item => item.name === '라이언')
+        console.log(data3) // 만약 찾는 값이 없으면, undefined 출력 (자바의 null과 동일)
+
+        const data4 = data1.findIndex(item => item.name === '라이언')
+        console.log(data4) // 만약 찾는 인덱스값이 없으면, -1 출력 (이건 자바와 동일)
+    </script>
+</body>
+</html>

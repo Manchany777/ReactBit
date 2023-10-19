@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dog = {
+            name: '멍멍이',
+            age: 2
+        }
+
+        console.log(dog.name, dog.age)
+        console.log(dog['name'], dog['age']) // 배열기호 사용 (결과는 위와 동일)
+
+        // 비구조할당
+        const {name, age} = dog;
+        console.log(name, age)  // (구조를 분해했기때문에, dog.name이라 하지 않고 그냥 name이라 해도 된다.) (결과는 위와 동일)
+        console.log('--------------')
+
+        const data = {
+            name2: '홍길동',
+            kor: 95,
+            eng: 100,
+            math: 80
+        }
+
+        console.log(data.name2, data.kor, data.eng, data.math)
+        console.log(data['name2'], data['kor'], data['eng'], data['math'])
+        const {name2, kor, eng, math} = data;
+        console.log(name2, kor, eng, math)
+
+        // 위 세가지 방법 중 비구조 할당을 가장 많이 쓴다.
+    </script>
+</body>
+</html>
+
+<!-- 
+비구조 할당(구조 분해)
+예) const object = {a:1, b:2, c:3}
+    const {a, b, c} = object   낱개로 받음    
+ -->

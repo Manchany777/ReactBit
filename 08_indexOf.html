@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = ['고구마', '감자', '김치', '고기', '고단백', '참치']
+
+        // '고'자가 들어간 단어를 모두 출력, 없으면 -1를 반환
+        const result = arr.filter(item => item.indexOf('고') !== -1 )
+                                    // 조건 (-1이 아닌것, 즉, '고'자가 없는 것(감자, 김치, 참치)들만 추출)
+        console.log(result)
+
+        const data1 = [
+            {text: '운동을 하다'},
+            {text: '수영을 하다'},
+            {text: '저녁을 먹다'},
+            {text: '친구를 만나다'},
+            {text: '잠을 자다'},
+            {text: '공부를 하다'},
+        ]
+
+        // '하다'를 포함한 문자를 모두 출력
+        const data2 = data1.filter(item => item.text.indexOf('하다') !== -1)
+        console.log(data2)
+
+        //  위의 코드와 같은 결과지만, 외부의 인자값을 받아서 실행한 게 다르다.
+        const findText = (array, str, key) => array.filter( item => item[key].indexOf(str) !== -1)
+        console.log(findText(data1, '하다', 'text'))
+
+        // indexOf를 단독으로 사용하는 예시
+        const mainString = 'JavaScript는 프로그래밍 언어입니다.';
+        const searchTerm = '프로그래밍';
+
+        const index = mainString.indexOf(searchTerm);
+
+        if (index !== -1) {
+        console.log(`'${searchTerm}'은 문자열에서 ${index}번째 위치에 있습니다.`);
+        } else {
+        console.log(`'${searchTerm}'을(를) 찾을 수 없습니다.`);
+        }
+        // 결과 출력 : '프로그래밍'은 문자열에서 12번째 위치에 있습니다. (0부터 시작, 공백 포함)
+    </script>
+</body>
+</html>
+
+<!-- 
+객체를 선언할 때에는 이렇게 {} 문자 안에 원하는 값들을 넣어준다.
+{키 : 값}
+ -->
