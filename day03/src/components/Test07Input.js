@@ -5,10 +5,10 @@ const Test07Input = ({data, onInput, onNext}) => {
 
     return (
         <div>
-            <p>이름 : <input name='name' value={name} onChange={ onInput } /></p>
-            <p>나이 : <input name='age' value={age} onChange={ onInput } /></p>
-            <p>주소 : <input name='addr' value={addr} onChange={ onInput }  /></p>
-            <p>핸드폰 : <input name='phone' value={phone} onChange={ onInput } /></p>
+            <p>이름 : <input type='text' name='name' value={name} onChange={ onInput } /></p>
+            <p>나이 : <input type='text' name='age' value={age} onChange={ onInput } /></p>
+            <p>주소 : <input type='text' name='addr' value={addr} onChange={ onInput }  /></p>
+            <p>핸드폰 : <input type='text' name='phone' value={phone} onChange={ onInput } /></p>
             <button onClick={ onNext }>다음</button>
         </div>
     );

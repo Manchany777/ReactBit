@@ -3,6 +3,8 @@ import Test07Input from './Test07Input';
 import Test07Print from './Test07Print';
 import Test07Output from './Test07Output';
 
+import '../css/Test07.css'
+
 const Test07Main = () => {
     const [data, setData] = useState({
         id: '',
@@ -31,10 +33,10 @@ const Test07Main = () => {
 
 
     return (
-        <div>
+        <div className='wrap'>
             { count === 1 && <Test07Input data={data} onInput={ onInput } onNext={ onNext } />}
             { count === 2 && <Test07Print data={data} onClick={ {onPrev, onNext} } /> }
-            { count === 3 && <Test07Output data={data} /> }
+            { count === 3 && <Test07Output name={data.name} /> } {/* 혹은 <Test07Output data={data} /> */}
         </div>
     );
 };
