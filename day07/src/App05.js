@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+
 import Main from './page05/Main';
+import ProductList from './page05/ProductList';
+import ProductDetail from './page05/ProductDetail';
 
 import './css/style05.css'
 
@@ -9,12 +12,19 @@ const App05 = () => {
         <BrowserRouter>
             <>
                 <nav>
-                    <ul><Link to='/'>Home</Link></ul>
+                    <ul>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/productList'>ProductList</Link></li>
+                    </ul>
                 </nav>
 
                 {/* 화면에 보이는 영역 */}
                 <Routes>
                     <Route path='/' element={ <Main /> } />
+                    <Route path='/productList'>
+                        <Route index element={ <ProductList /> } />
+                        <Route path=':productId' element={ <ProductDetail /> } />
+                    </Route>
                 </Routes>
             </>
         </BrowserRouter>

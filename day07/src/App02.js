@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './css/style02.css'
+//import './css/style02.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page02/Home';
 import NavBar from './page02/NavBar';
