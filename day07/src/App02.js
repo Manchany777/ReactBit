@@ -1,6 +1,5 @@
 import React from 'react';
 
-//import './css/style02.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './page02/Home';
 import NavBar from './page02/NavBar';
@@ -9,6 +8,8 @@ import Ceo from './page02/Ceo';
 import Sub01 from './page02/Sub01';
 import NotFiles from './page02/NotFiles';
 
+//import './css/style02.css' // => page05의 내용과 겹쳐서 잠시 주석 처리됨
+//import styles from './css/page02.module.css'; (보류)
 
 const App02 = () => {
     return (
